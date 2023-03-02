@@ -1,0 +1,7 @@
+.homepage {
+  @apply bg-red-300 text-sm;
+}
+
+.adminpage {
+  @apply bg-teal-300;
+}
