@@ -9,36 +9,36 @@ const handle = app.getRequestHandler();
 
 app.prepare().then(() => {
   const mainServer = express();
-  const adminServer = express();
-  const homepageServer = express();
+  const website_2Server = express();
+  const website_1Server = express();
 
-  adminServer.get("/", (req, res) => {
-    return app.render(req, res, "/admin", req.query);
+  website_2Server.get("/", (req, res) => {
+    return app.render(req, res, "/website_2", req.query);
   });
 
-  adminServer.get("/*", (req, res) => {
-    return app.render(req, res, `/admin${req.path}`, req.query);
+  website_2Server.get("/*", (req, res) => {
+    return app.render(req, res, `/website_2${req.path}`, req.query);
   });
 
-  adminServer.all("*", (req, res) => {
+  website_2Server.all("*", (req, res) => {
     return handle(req, res);
   });
 
-  homepageServer.get("/", (req, res) => {
-    return app.render(req, res, "/homepage", req.query);
+  website_1Server.get("/", (req, res) => {
+    return app.render(req, res, "/website_1", req.query);
   });
 
-  homepageServer.get("/*", (req, res) => {
-    return app.render(req, res, `/homepage${req.path}`, req.query);
+  website_1Server.get("/*", (req, res) => {
+    return app.render(req, res, `/website_1${req.path}`, req.query);
   });
 
-  homepageServer.all("*", (req, res) => {
+  website_1Server.all("*", (req, res) => {
     return handle(req, res);
   });
 
-  mainServer.use(vhost("admin.lvh.me", adminServer));
-  mainServer.use(vhost("lvh.me", homepageServer));
-  mainServer.use(vhost("www.lvh.me", homepageServer));
+  mainServer.use(vhost("website_2.lvh.me", website_2Server));
+  mainServer.use(vhost("lvh.me", website_1Server));
+  mainServer.use(vhost("www.lvh.me", website_1Server));
   mainServer.listen(port, (err) => {
     if (err) throw err;
     console.log(`> Ready on http://lvh.me:${port}`);

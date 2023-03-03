@@ -1,0 +1,42 @@
+[
+  {
+    "website_1": {
+      "content": {
+        "body": [
+          {
+            "_uid": "BUY6Drn9e1",
+            "component": "foo"
+          },
+          {
+            "_uid": "gJZoSLkfZV",
+            "component": "bar"
+          },
+          {
+            "_uid": "X1JAfdsZxy",
+            "component": "foo"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "website_2": {
+      "content": {
+        "body": [
+          {
+            "_uid": "BUY6Drn9e1",
+            "component": "foo"
+          },
+          {
+            "_uid": "gJZoSLkfZV",
+            "component": "bar"
+          },
+          {
+            "_uid": "X1JAfdsZxy",
+            "component": "foo"
+          }
+        ]
+      }
+    }
+  }
+]
