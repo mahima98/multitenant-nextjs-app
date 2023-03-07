@@ -1,11 +1,12 @@
 import Head from "next/head";
 import styles from "../../styles/Home.module.css";
 import TestComponent from "../../components/testComponent";
-import Link from "next/link";
 import { getHomepage } from "./api/main";
 import { NextPage } from "next";
-import { readFileSync } from "fs";
-import { join } from "path";
+import { RenderComponents } from "@/utils/RenderComponents";
+import CardHero from "@/components/CardHero";
+import { useEffect } from "react";
+import React from "react";
 
 const Home: NextPage = ({ data }: any) => {
   console.log(data);
@@ -21,7 +22,12 @@ const Home: NextPage = ({ data }: any) => {
       <main className={styles.homepage}>
         <div className="bg-red-300">website_1 App</div>
         <TestComponent />
-        <div>{/* {data.map(config => RenderCard(config))} */}</div>
+        {data &&
+          data.map((value: any, key: number) => (
+            <section key={key}>
+              {RenderComponents(value.component, value.id)}
+            </section>
+          ))}
       </main>
     </>
   );
@@ -30,14 +36,10 @@ export default Home;
 
 export async function getServerSideProps() {
   const data = await getHomepage();
-  // get data locally from data.json
-  // const filePath = join(process.cwd(), "data.json");
-  // const fileContents = readFileSync(filePath, "utf8");
-  // const data = JSON.parse(fileContents);
 
   return {
     props: {
-      data: data,
+      data: data[0].data.homepage,
     },
   };
 }

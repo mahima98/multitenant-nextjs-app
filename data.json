@@ -1,42 +1,16 @@
-[
-  {
-    "website_1": {
-      "content": {
-        "body": [
-          {
-            "_uid": "BUY6Drn9e1",
-            "component": "foo"
-          },
-          {
-            "_uid": "gJZoSLkfZV",
-            "component": "bar"
-          },
-          {
-            "_uid": "X1JAfdsZxy",
-            "component": "foo"
-          }
-        ]
+{
+  "status": "success",
+  "message": "Data retrieved successfully.",
+  "data": {
+    "homepage": [
+      {
+        "id": 1,
+        "component": "cardHero"
+      },
+      {
+        "id": 2,
+        "component": "button"
       }
-    }
-  },
-  {
-    "website_2": {
-      "content": {
-        "body": [
-          {
-            "_uid": "BUY6Drn9e1",
-            "component": "foo"
-          },
-          {
-            "_uid": "gJZoSLkfZV",
-            "component": "bar"
-          },
-          {
-            "_uid": "X1JAfdsZxy",
-            "component": "foo"
-          }
-        ]
-      }
-    }
+    ]
   }
-]
+}
