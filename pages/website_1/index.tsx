@@ -4,9 +4,6 @@ import TestComponent from "../../components/testComponent";
 import { getHomepage } from "./api/main";
 import { NextPage } from "next";
 import { RenderComponents } from "@/utils/RenderComponents";
-import CardHero from "@/components/CardHero";
-import { useEffect } from "react";
-import React from "react";
 
 const Home: NextPage = ({ data }: any) => {
   console.log(data);
