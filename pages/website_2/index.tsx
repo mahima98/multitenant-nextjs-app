@@ -1,6 +1,5 @@
 import Head from "next/head";
 import { Inter } from "next/font/google";
-import styles from "../../styles/Home.module.css";
 
 export default function Website_2() {
   return (
@@ -11,7 +10,7 @@ export default function Website_2() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main className={styles.adminpage}>Website_2 App</main>
+      <main className="">Website_2 App</main>
     </>
   );
 }
