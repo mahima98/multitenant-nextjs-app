@@ -2,7 +2,7 @@ import react, { useState } from "react";
 
 export default function CardHero() {
   return (
-    <div className="bg-gray-50 py-20 flex flex-col items-center justify-center">
+    <div className="bg-gray-200 py-20 flex flex-col items-center justify-center">
       <div className="xl:w-1/2 w-11/12">
         <h1
           role="heading"

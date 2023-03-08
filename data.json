@@ -11,6 +11,16 @@
         "id": 2,
         "component": "button"
       }
+    ],
+    "about": [
+      {
+        "id": 1,
+        "component": "button"
+      },
+      {
+        "id": 2,
+        "component": "button"
+      }
     ]
   }
 }
