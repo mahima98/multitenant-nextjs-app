@@ -23,8 +23,8 @@
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx",
-    "components/head.js",
-    "components/head.js",
+    "components/head.jtsx",
+    "components/head.jtsx",
     "pages/website_1/index.js",
     "pages/website_1/index.js"
   ],

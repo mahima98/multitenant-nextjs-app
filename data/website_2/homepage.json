@@ -1,0 +1,10 @@
+[
+  {
+    "id": 1,
+    "component": "sectionWorkWithUs"
+  },
+  {
+    "id": 2,
+    "component": "button"
+  }
+]
