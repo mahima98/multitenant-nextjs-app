@@ -1,6 +1,6 @@
 import Head from "next/head";
 
-import Footer from "@/components/Footer"
+import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 interface LayoutProps {
   title: string;
@@ -21,12 +21,13 @@ export default function Layout({
         <title>{title}</title>
         <meta name="description" content={description} />
         <meta name="keywords" content={keywords} />
-      <script src="https://cdn.tailwindcss.com" defer></script>
-
+        <script src="https://cdn.tailwindcss.com" defer></script>
       </Head>
-      <Header />
-      <main>{children}</main>
-      <Footer />
+      <Header appname="Website_1" />
+      <main className="mx-auto lg:px-8 flex flex-col min-h-screen">
+        {children}
+      </main>
+      <Footer appname="Website_1" />
     </div>
   );
 }

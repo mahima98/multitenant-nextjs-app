@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 interface Props {
   appname?: string;
 }
@@ -10,10 +12,10 @@ export default function Header({ appname }: Props) {
           className="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8"
           aria-label="Global"
         >
-          <a href="#" className="-m-1.5 p-1.5">
+          <Link href="/" className="-m-1.5 p-1.5">
             <span className="sr-only">Your Company</span>
             <div className="logo font-bold text-lg text-red-700">{appname}</div>
-          </a>
+          </Link>
           <div className="flex lg:hidden">
             <button
               type="button"
@@ -37,12 +39,12 @@ export default function Header({ appname }: Props) {
             </button>
           </div>
           <div className="hidden lg:flex lg:gap-x-12">
-            <a
-              href="#"
+            <Link
+              href="/products"
               className="text-sm font-semibold leading-6 text-gray-900"
             >
               Product
-            </a>
+            </Link>
 
             <a
               href="#"
