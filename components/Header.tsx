@@ -1,8 +1,8 @@
 interface Props {
-  logo?: string;
+  appname?: string;
 }
 
-export default function Header({ logo }: Props) {
+export default function Header({ appname }: Props) {
   return (
     <div>
       <header className="bg-white">
@@ -12,7 +12,7 @@ export default function Header({ logo }: Props) {
         >
           <a href="#" className="-m-1.5 p-1.5">
             <span className="sr-only">Your Company</span>
-            <div className="logo font-bold text-lg text-teal-600">{logo}</div>
+            <div className="logo font-bold text-lg text-red-700">{appname}</div>
           </a>
           <div className="flex lg:hidden">
             <button

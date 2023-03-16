@@ -1,6 +1,6 @@
 import Head from "next/head";
 import Script from "next/script";
-import { get_Website_2_Homepage } from "../../api/main";
+import { get_Website_2_Homepage } from "./api/main";
 import { NextPage } from "next";
 import { RenderComponents } from "@/utils/RenderComponents";
 import Header from "../../components/Header";

@@ -1,9 +1,10 @@
 import Head from "next/head";
 import Script from "next/script";
-import { get_Website_1_Homepage } from "../../api/main";
+import { get_Website_1_Homepage } from "./api/main";
 import { NextPage } from "next";
 import { RenderComponents } from "@/utils/RenderComponents";
 import Header from "../../components/Header";
+import Footer from "@/components/Footer";
 const Home: NextPage = ({ data }: any) => {
   console.log(data);
 
@@ -21,13 +22,13 @@ const Home: NextPage = ({ data }: any) => {
       <script src="https://cdn.tailwindcss.com" defer></script>
 
       <main className="website-1">
-        <Header logo="Website_1" />
+        <Header appname="Website_1" />
         {data &&
           data.map((value: any, key: number) => (
             <section key={key}>
               {RenderComponents(value.component, value.id)}
             </section>
-          ))}
+          ))}<Footer  appname="Website_1"/>
       </main>
     </>
   );

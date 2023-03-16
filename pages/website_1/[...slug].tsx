@@ -1,7 +1,7 @@
 import { RenderComponents } from "../../utils/RenderComponents";
 import { useRouter } from "next/router";
 
-import { getSlugPage } from "../../api/main";
+import { getSlugPage } from "./api/main";
 // eslint-disable-next-line
 export default function PageSlug({ data }: any) {
   const router = useRouter();
