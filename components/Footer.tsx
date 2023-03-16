@@ -6,7 +6,7 @@ interface Props {
 
 export default function Footer({ appname }: Props) {
   return (
-    <div className="mt-auto">
+    <div className="mt-auto py-8">
       <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-4 md:gap-8 gap-4 mx-auto max-w-7xl lg:px-8 bg-white">
         <div className="flex flex-col flex-shrink-0">
           <div className="font-extrabold uppercase text-red-700">{appname}</div>
