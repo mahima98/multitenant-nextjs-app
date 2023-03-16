@@ -3,7 +3,7 @@ import Head from "next/head";
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 interface LayoutProps {
-  appname: string;
+  appname?: string;
   title: string;
   keywords: string;
   description: string;

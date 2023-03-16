@@ -1,18 +1,14 @@
-import Head from "next/head";
-import Script from "next/script";
 import { get_Website_1_Homepage } from "./api/main";
 import { NextPage } from "next";
 import { RenderComponents } from "@/utils/RenderComponents";
-import Header from "../../components/Header";
-import Footer from "@/components/Footer";
-import LayoutW1 from "@/components/LayoutW1";
+import Layout from "@/components/LayoutW1";
 
 const Home: NextPage = ({ data }: any) => {
   console.log(data);
 
   return (
     <>
-      <LayoutW1 title="Homepage">
+      <Layout title="Homepage" appname="website_1">
         <main className="website-1">
           {data &&
             data.map((value: any, key: number) => (
@@ -21,7 +17,7 @@ const Home: NextPage = ({ data }: any) => {
               </section>
             ))}
         </main>
-      </LayoutW1>
+      </Layout>
     </>
   );
 };
