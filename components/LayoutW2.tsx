@@ -25,11 +25,11 @@ export default function Layout({
         <meta name="keywords" content={keywords} />
         <script src="https://cdn.tailwindcss.com" defer></script>
       </Head>
-      <Header appname={appname} />
+      <Header appname="website_2" />
       <main className="mx-auto lg:px-8 flex flex-col min-h-screen">
         {children}
       </main>
-      <Footer appname={appname} />
+      <Footer appname="website_2" />
     </div>
   );
 }

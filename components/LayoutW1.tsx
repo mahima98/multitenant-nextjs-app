@@ -3,7 +3,7 @@ import Head from "next/head";
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 interface LayoutProps {
-  appname: string;
+  appname?: string;
   title: string;
   keywords: string;
   description: string;
@@ -25,11 +25,11 @@ export default function Layout({
         <meta name="keywords" content={keywords} />
         <script src="https://cdn.tailwindcss.com" defer></script>
       </Head>
-      <Header appname={appname} />
+      <Header appname="website_1" />
       <main className="mx-auto lg:px-8 flex flex-col min-h-screen">
         {children}
       </main>
-      <Footer appname={appname} />
+      <Footer appname="website_1" />
     </div>
   );
 }

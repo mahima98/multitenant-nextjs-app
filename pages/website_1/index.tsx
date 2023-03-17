@@ -8,7 +8,7 @@ const Home: NextPage = ({ data }: any) => {
 
   return (
     <>
-      <Layout title="Homepage" appname="website_1">
+      <Layout title="Homepage">
         <main className="website-1">
           {data &&
             data.map((value: any, key: number) => (
