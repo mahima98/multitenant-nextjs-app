@@ -1,10 +1,12 @@
 import Layout from "@/components/LayoutW1";
+import Link from "next/link";
+import { get_products } from "../api/main";
 
-export default function products() {
+export default function products({ data }: any) {
   const products = [
     {
       id: 1,
-      name: "Earthen Bottle",
+      name: "Earthen-Bottle",
       href: "#",
       price: "$48",
       imageSrc:
@@ -14,7 +16,7 @@ export default function products() {
     },
     {
       id: 2,
-      name: "Nomad Tumbler",
+      name: "Nomad-Tumbler",
       href: "#",
       price: "$35",
       imageSrc:
@@ -24,7 +26,7 @@ export default function products() {
     },
     {
       id: 3,
-      name: "Focus Paper Refill",
+      name: "Focus-Paper-Refill",
       href: "#",
       price: "$89",
       imageSrc:
@@ -34,7 +36,7 @@ export default function products() {
     },
     {
       id: 4,
-      name: "Machined Mechanical Pencil",
+      name: "Machined-Mechanical-Pencil",
       href: "#",
       price: "$35",
       imageSrc:
@@ -42,12 +44,11 @@ export default function products() {
       imageAlt:
         "Hand holding black machined steel mechanical pencil with brass tip and top.",
     },
-    // More products...
   ];
 
   return (
     <Layout title="products">
-      <div className="bg-white">
+      <div className="bg-gray-100">
         <div className="mx-auto max-w-2xl py-16 px-4 sm:py-24 sm:px-6 lg:max-w-7xl lg:px-8">
           <h2 className="sr-only">Products</h2>
           <h1 className="text-center font-bold text-2xl md:text-4xl pb-8 md:pb-16">
@@ -55,8 +56,13 @@ export default function products() {
           </h1>
 
           <div className="grid grid-cols-1 gap-y-10 gap-x-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 xl:gap-x-8">
-            {products.map((product) => (
-              <a key={product.id} href={product.href} className="group">
+            {data.map((product: any) => (
+              <Link
+                href={`/products/${product.name}`}
+                as={`/products/${product.name}`}
+                key={product.id}
+                className="group"
+              >
                 <div className="aspect-w-1 aspect-h-1 w-full overflow-hidden rounded-lg bg-gray-200 xl:aspect-w-7 xl:aspect-h-8">
                   <img
                     src={product.imageSrc}
@@ -68,11 +74,21 @@ export default function products() {
                 <p className="mt-1 text-lg font-medium text-gray-900">
                   {product.price}
                 </p>
-              </a>
+              </Link>
             ))}
           </div>
         </div>
       </div>
     </Layout>
   );
+}
+
+export async function getServerSideProps() {
+  const data = await get_products();
+
+  return {
+    props: {
+      data: data,
+    },
+  };
 }

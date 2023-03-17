@@ -1,0 +1,19 @@
+import Layout from "@/components/LayoutW1";
+import { useRouter } from "next/router";
+
+export default function productPage() {
+  const router = useRouter();
+
+  const productName = router.query.id;
+  console.log(productName);
+
+  return (
+    <>
+      <Layout title="products">
+        <div className="flex flex-col w-full justify-center items-center">
+          product name : {productName}{" "}
+        </div>
+      </Layout>
+    </>
+  );
+}

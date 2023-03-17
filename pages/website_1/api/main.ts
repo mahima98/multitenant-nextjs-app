@@ -10,6 +10,16 @@ export async function get_Website_1_Homepage() {
   const homepage = [...data];
   return homepage;
 }
+
+export async function get_products() {
+  const filePath = join(process.cwd(), "data/website_1/products.json");
+  const fileContents = readFileSync(filePath, "utf8");
+  const data = JSON.parse(fileContents);
+
+  const products = [...data];
+  return products;
+}
+
 export async function get_Website_2_Homepage() {
   const filePath = join(process.cwd(), "data/website_2/homepage.json");
   const fileContents = readFileSync(filePath, "utf8");
