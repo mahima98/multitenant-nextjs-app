@@ -58,8 +58,8 @@ export default function products({ data }: any) {
           <div className="grid grid-cols-1 gap-y-10 gap-x-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 xl:gap-x-8">
             {data.map((product: any) => (
               <Link
-                href={`/products/${product.name}`}
-                as={`/products/${product.name}`}
+                href={`/products/[...slug]`}
+                as={`/products/[...slug]`}
                 key={product.id}
                 className="group"
               >

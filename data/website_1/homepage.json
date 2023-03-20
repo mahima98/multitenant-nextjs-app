@@ -4,7 +4,11 @@
     "component": "cardHero"
   },
   {
+    "id": 1,
+    "component": "whatWeDo"
+  },
+  {
     "id": 2,
-    "component": "button"
+    "component": "partners"
   }
 ]

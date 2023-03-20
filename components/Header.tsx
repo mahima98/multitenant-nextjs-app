@@ -68,10 +68,10 @@ export default function Header({ appname }: Props) {
             </a>
 
             <a
-              href="#"
+              href="about"
               className="text-sm font-semibold leading-6 text-gray-900"
             >
-              Log in <span aria-hidden="true">&rarr;</span>
+              About
             </a>
           </div>
         </nav>

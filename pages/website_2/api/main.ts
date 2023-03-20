@@ -19,6 +19,14 @@ export async function get_Website_2_Homepage() {
   return homepage;
 }
 
+export async function get_about() {
+  const filePath = join(process.cwd(), "data/website_1/about.json");
+  const fileContents = readFileSync(filePath, "utf8");
+  const data = JSON.parse(fileContents);
+
+  const about = [...data];
+  return about;
+}
 export async function getSlugPage(locale: NextApiRequest) {
   const filePath = join(process.cwd(), "data/website_1/about.json");
   const fileContents = readFileSync(filePath, "utf8");

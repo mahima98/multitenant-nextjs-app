@@ -26,7 +26,7 @@ export default function Layout({
         <script src="https://cdn.tailwindcss.com" defer></script>
       </Head>
       <Header appname="website_1" />
-      <main className="mx-auto lg:px-8 flex flex-col min-h-screen">
+      <main className="mx-auto px-8 md:px-0 flex flex-col min-h-screen">
         {children}
       </main>
       <Footer appname="website_1" />

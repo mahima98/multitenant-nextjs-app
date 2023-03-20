@@ -35,7 +35,7 @@ export default function CardHero() {
           </p>
           <Link
             href="/products"
-            className="px-7 lg:py-3 lg:text-lg md:text-base text-sm py-4 bg-red-700 rounded-md flex items-center hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-offset-4 mt-12 focus:ring-blue-700"
+            className="px-7 lg:py-3 lg:text-lg md:text-base text-sm py-4 bg-red-700 rounded-md flex items-center hover:bg-red-600 focus:outline-none focus:ring-2 focus:ring-offset-4 mt-12 focus:ring-blue-700"
           >
             <p className="lg:text-lg md:text-base text-sm font-medium leading-none text-white mr-3">
               See products

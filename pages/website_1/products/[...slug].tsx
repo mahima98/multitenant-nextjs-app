@@ -5,6 +5,7 @@ export default function productPage() {
   const router = useRouter();
 
   const productName = router.query.id;
+  const slug = (router.query.slug as string[]) || [];
   console.log(productName);
 
   return (

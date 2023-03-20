@@ -15,11 +15,15 @@
     "about": [
       {
         "id": 1,
-        "component": "button"
+        "component": "header"
+      },
+      {
+        "id": 1,
+        "component": "cardHero"
       },
       {
         "id": 2,
-        "component": "button"
+        "component": "footer"
       }
     ]
   }

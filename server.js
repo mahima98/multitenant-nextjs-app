@@ -9,36 +9,36 @@ const handle = app.getRequestHandler();
 
 app.prepare().then(() => {
   const mainServer = express();
-  const website_2Server = express();
-  const website_1Server = express();
+  const website_2_Server = express();
+  const website_1_Server = express();
 
-  website_2Server.get("/", (req, res) => {
+  website_2_Server.get("/", (req, res) => {
     return app.render(req, res, "/website_2", req.query);
   });
 
-  website_2Server.get("/*", (req, res) => {
+  website_2_Server.get("/*", (req, res) => {
     return app.render(req, res, `/website_2${req.path}`, req.query);
   });
 
-  website_2Server.all("*", (req, res) => {
+  website_2_Server.all("*", (req, res) => {
     return handle(req, res);
   });
 
-  website_1Server.get("/", (req, res) => {
+  website_1_Server.get("/", (req, res) => {
     return app.render(req, res, "/website_1", req.query);
   });
 
-  website_1Server.get("/*", (req, res) => {
+  website_1_Server.get("/*", (req, res) => {
     return app.render(req, res, `/website_1${req.path}`, req.query);
   });
 
-  website_1Server.all("*", (req, res) => {
+  website_1_Server.all("*", (req, res) => {
     return handle(req, res);
   });
 
-  mainServer.use(vhost("website_2.lvh.me", website_2Server));
-  mainServer.use(vhost("lvh.me", website_1Server));
-  mainServer.use(vhost("www.lvh.me", website_1Server));
+  mainServer.use(vhost("website_2.lvh.me", website_2_Server));
+  mainServer.use(vhost("lvh.me", website_1_Server));
+  mainServer.use(vhost("www.lvh.me", website_1_Server));
   mainServer.listen(port, (err) => {
     if (err) throw err;
     console.log(`> Ready on http://lvh.me:${port}`);

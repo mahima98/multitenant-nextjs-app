@@ -1,4 +1,5 @@
 import Layout from "@/components/LayoutW2";
+import Link from "next/link";
 
 export default function news() {
   const news = [
@@ -86,12 +87,12 @@ export default function news() {
                     <time dateTime={post.datetime} className="text-gray-500">
                       {post.date}
                     </time>
-                    <a
+                    <Link
                       href={post.category.href}
                       className="relative z-10 rounded-full bg-gray-50 py-1.5 px-3 font-medium text-gray-600 hover:bg-gray-100"
                     >
                       {post.category.title}
-                    </a>
+                    </Link>
                   </div>
                   <div className="group relative">
                     <h3 className="mt-3 text-lg font-semibold leading-6 text-gray-900 group-hover:text-gray-600">
