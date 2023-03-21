@@ -41,17 +41,21 @@ export default function Header({ appname }: Props) {
           <div className="hidden lg:flex lg:gap-x-12">
             <Link
               href="/products"
-              className="text-sm font-semibold leading-6 text-gray-900"
+              className={`${
+                appname === "website_1" ? "visible" : "hidden"
+              } text-sm font-semibold leading-6 text-gray-900`}
             >
-              Product
+              Products
             </Link>
 
-            <a
+            <Link
               href="/news"
-              className="text-sm font-semibold leading-6 text-gray-900"
+              className={`${
+                appname === "website_2" ? "visible" : "hidden"
+              } text-sm font-semibold leading-6 text-gray-900`}
             >
               News
-            </a>
+            </Link>
 
             <a
               href="#"
