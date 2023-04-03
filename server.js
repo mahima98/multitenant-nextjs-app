@@ -29,10 +29,16 @@ app.prepare().then(() => {
   });
 
   website_1_Server.get("/*", (req, res) => {
+    console.log("nested");
+    console.group("nested");
+    console.log({ req });
+    console.log({ res });
+    console.groupEnd();
     return app.render(req, res, `/website_1${req.path}`, req.query);
   });
 
   website_1_Server.all("*", (req, res) => {
+    console.log("all");
     return handle(req, res);
   });
 

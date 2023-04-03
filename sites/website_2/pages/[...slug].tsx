@@ -7,7 +7,7 @@ export default function PageSlug({ data }: any) {
   const router = useRouter();
   const { pid } = router.query;
   // eslint-disable-next-line
-  // console.log(pid);
+  console.log(pid);
   return (
     <>
       {/* eslint-disable-next-line */}
@@ -23,7 +23,7 @@ export default function PageSlug({ data }: any) {
 
 export async function getServerSideProps({ locale, params }: any) {
   const id = params.id;
-  // console.log(id);
+  console.log(id);
   const data = await getSlugPage(locale);
 
   return {
