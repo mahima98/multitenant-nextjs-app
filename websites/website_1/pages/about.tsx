@@ -1,7 +1,7 @@
 import { get_about } from "./api/main";
 import { NextPage } from "next";
 import { RenderComponents } from "@/utils/RenderComponents";
-import Layout from "@/components/LayoutW1";
+import Layout from "@/components/Layout";
 
 const About: NextPage = ({ data }: any) => {
   // console.log(data);

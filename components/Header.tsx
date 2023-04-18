@@ -1,7 +1,7 @@
 import Link from "next/link";
 
 interface Props {
-  appname?: string;
+  appname?: String;
 }
 
 export default function Header({ appname }: Props) {

@@ -1,4 +1,4 @@
-import Layout from "@/components/LayoutW1";
+import Layout from "@/components/Layout";
 import { useRouter } from "next/router";
 
 export default function productPage() {

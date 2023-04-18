@@ -1,24 +1,65 @@
 // Dummy data to be replaced with your database
 const hostnamesDB = [
   {
-    name: "This is Site 1",
+    name: "This is website 1",
     description: "Subdomain + custom domain",
-    subdomain: "test1",
+    subdomain: "website_1",
     customDomain: "custom-domain-1.com",
+    data: {
+      homepage: [
+        {
+          id: 1,
+          component: "cardHero",
+        },
+        {
+          id: 1,
+          component: "whatWeDo",
+        },
+        {
+          id: 2,
+          component: "partners",
+        },
+      ],
+    },
     // Default subdomain for Preview deployments and for local development
     defaultForPreview: true,
   },
   {
-    name: "This is Site 2",
+    name: "This is website 2",
     description: "Subdomain only",
-    subdomain: "test2",
+    subdomain: "website_2",
+    data: {
+      homepage: [
+        {
+          id: 1,
+          component: "sectionWorkWithUs",
+        },
+        {
+          id: 2,
+          component: "partners",
+        },
+      ],
+    },
   },
   {
     name: "This is Site 3",
     description: "Subdomain only",
     subdomain: "test3",
+    data: {
+      homepage: [
+        {
+          id: 1,
+          component: "cardHero",
+        },
+        {
+          id: 2,
+          component: "button",
+        },
+      ],
+    },
   },
 ];
+
 const DEFAULT_HOST = hostnamesDB.find((h) => h.defaultForPreview);
 
 /**

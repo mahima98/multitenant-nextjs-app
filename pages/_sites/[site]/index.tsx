@@ -1,6 +1,8 @@
 import { useRouter } from "next/router";
-// we will create these in the next step
 import { getHostnameDataBySubdomain, getSubdomainPaths } from "@/lib/db";
+import { RenderComponents } from "@/utils/RenderComponents";
+import Layout from "@/components/Layout";
+import { NextPage } from "next";
 
 // Our types for the site data
 export interface Props {
@@ -8,9 +10,10 @@ export interface Props {
   description: String;
   subdomain: String;
   customDomain: String;
+  data: [];
 }
 
-export default function Index(props: Props) {
+const Home: NextPage<Props> = (props) => {
   const router = useRouter();
 
   if (router.isFallback) {
@@ -21,12 +24,28 @@ export default function Index(props: Props) {
     );
   }
 
+  let data = props.data.homepage;
+
+  console.log("data", data);
+
   return (
     <>
-      <h1>{props.name}</h1>
+      {/* <h1 className="text-red-200">{props.name}</h1> */}
+      <Layout title={props.subdomain}>
+        <main className="website-1">
+          {data &&
+            data.map((value: any, key: number) => (
+              <section key={key}>
+                {RenderComponents(value.component, value.id)}
+              </section>
+            ))}
+        </main>
+      </Layout>
     </>
   );
-}
+};
+
+export default Home;
 
 // Getting the paths for all the subdomains in our database
 export async function getStaticPaths() {
@@ -43,6 +62,7 @@ export async function getStaticProps({ params: { site } }: any) {
   const sites = await getHostnameDataBySubdomain(site);
 
   return {
+    // data: data,
     props: sites,
     revalidate: 3600,
   };

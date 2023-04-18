@@ -1,7 +1,7 @@
 import React from "react";
 
 interface Props {
-  appname?: string;
+  appname?: String;
 }
 
 export default function Footer({ appname }: Props) {

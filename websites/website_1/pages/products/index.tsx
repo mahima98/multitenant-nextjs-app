@@ -1,4 +1,4 @@
-import Layout from "@/components/LayoutW1";
+import Layout from "@/components/Layout";
 import Link from "next/link";
 import { get_products } from "../api/main";
 
